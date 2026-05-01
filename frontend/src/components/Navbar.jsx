@@ -19,12 +19,21 @@ const Navbar = () => {
           📊 Project Manager
         </Link>
         <ul className="nav-menu">
-          <li>
-            <Link to="/dashboard">Dashboard</Link>
-          </li>
-          <li>
-            <Link to="/projects">Projects</Link>
-          </li>
+          {user?.role === 'admin' && (
+            <li>
+              <Link to="/admin">🔐 Admin</Link>
+            </li>
+          )}
+          {user?.role !== 'admin' && (
+            <>
+              <li>
+                <Link to="/dashboard">Dashboard</Link>
+              </li>
+              <li>
+                <Link to="/projects">Projects</Link>
+              </li>
+            </>
+          )}
         </ul>
         <div className="nav-right">
           <span className="user-info">{user?.name}</span>

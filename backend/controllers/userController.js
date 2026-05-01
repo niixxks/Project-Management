@@ -26,16 +26,22 @@ exports.getUserById = async (req, res) => {
 // Update user
 exports.updateUser = async (req, res) => {
   try {
-    const { name, avatar } = req.body;
+    const { name, avatar, role } = req.body;
 
     // Check if user is updating their own profile or is admin
     if (req.params.id !== req.user.id && req.user.role !== 'admin') {
       return res.status(403).json({ message: 'Not authorized' });
     }
 
+    // Only admins can change roles
+    const updateData = { name, avatar };
+    if (role && req.user.role === 'admin') {
+      updateData.role = role;
+    }
+
     const user = await User.findByIdAndUpdate(
       req.params.id,
-      { name, avatar },
+      updateData,
       { new: true, runValidators: true }
     ).select('-password');
 
