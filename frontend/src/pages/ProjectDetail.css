@@ -1,0 +1,138 @@
+.project-detail-container {
+  padding: 20px;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.project-header h1 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+.project-header p {
+  margin: 10px 0 0 0;
+  color: #7f8c8d;
+}
+
+.project-status {
+  text-align: right;
+}
+
+.project-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.info-card {
+  background: white;
+  padding: 12px 15px;
+  border-radius: 4px;
+  border-left: 4px solid #007bff;
+  font-size: 14px;
+}
+
+.tasks-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.tasks-header h2 {
+  margin: 0;
+}
+
+.task-form {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.tasks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.task-item {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: box-shadow 0.3s;
+}
+
+.task-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.task-info h3 {
+  margin: 0 0 5px 0;
+  color: #2c3e50;
+}
+
+.task-info p {
+  margin: 0 0 10px 0;
+  color: #7f8c8d;
+  font-size: 14px;
+}
+
+.task-meta {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: #7f8c8d;
+}
+
+.task-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.status-select {
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+@media (max-width: 768px) {
+  .project-header {
+    flex-direction: column;
+  }
+
+  .project-status {
+    margin-top: 15px;
+  }
+
+  .task-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .task-actions {
+    width: 100%;
+    margin-top: 15px;
+  }
+}

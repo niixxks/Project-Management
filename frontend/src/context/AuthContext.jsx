@@ -1,0 +1,36 @@
+import React, { createContext, useState, useEffect } from 'react';
+
+export const AuthContext = createContext();
+
+export const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
+  const [token, setToken] = useState(localStorage.getItem('token'));
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (token) {
+      // Verify token is valid
+      setLoading(false);
+    } else {
+      setLoading(false);
+    }
+  }, [token]);
+
+  const login = (token, userData) => {
+    setToken(token);
+    setUser(userData);
+    localStorage.setItem('token', token);
+  };
+
+  const logout = () => {
+    setToken(null);
+    setUser(null);
+    localStorage.removeItem('token');
+  };
+
+  return (
+    <AuthContext.Provider value={{ user, token, login, logout, loading }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};

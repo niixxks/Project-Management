@@ -1,0 +1,65 @@
+.projects-container {
+  padding: 20px;
+}
+
+.projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.projects-header h1 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.project-card h3 {
+  margin: 0 0 10px 0;
+  color: #2c3e50;
+}
+
+.project-card p {
+  color: #7f8c8d;
+  margin: 0 0 15px 0;
+  flex-grow: 1;
+}
+
+.project-meta {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.due-date {
+  font-size: 12px;
+  color: #7f8c8d;
+}
+
+.project-actions {
+  display: flex;
+  gap: 10px;
+}
