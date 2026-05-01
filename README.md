@@ -355,4 +355,4 @@ Created as a full-stack project management solution.
 ---
 
 **Live Demo**: https://your-project.railway.app  
-**GitHub Repository**: https://github.com/yourusername/project-management-app
+**GitHub Repository**: https://github.com/niixxks/Project-Management
